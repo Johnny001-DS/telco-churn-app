@@ -28,3 +28,5 @@ jobs:
           file: ./dockerfile  # change if your Dockerfile has a different name or path
           push: true
           tags: johnny001ds/telco-churn-app:latest
+          build-args: |
+            MODEL_RUN_PATH=src/serving/model/3b1a41221fc44548aed629fa42b762e0/artifacts

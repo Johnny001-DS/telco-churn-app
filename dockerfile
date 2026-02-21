@@ -16,8 +16,8 @@ RUN pip install --upgrade pip \
 COPY . .
 
 # === Bundle a trained model from MLflow artifacts ===
-# Override MODEL_RUN_PATH at build time to point to your latest run artifacts
-ARG MODEL_RUN_PATH=mlruns/712268213209809681/ebb1203e5b044bd29bca61311a07d096/artifacts
+# Default to a committed model artifact path; override MODEL_RUN_PATH at build time for newer runs
+ARG MODEL_RUN_PATH=src/serving/model/3b1a41221fc44548aed629fa42b762e0/artifacts
 
 # Keep a copy under src/serving/model for reference
 COPY ${MODEL_RUN_PATH} /app/src/serving/model/latest
